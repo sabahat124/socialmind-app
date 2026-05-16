@@ -256,7 +256,7 @@ export const appRouter = router({
           twitter: 280,
           instagram: 2200,
           facebook: 63206,
-          linkedin: https://idyllic-melomakarona-96282b.netlify.app,
+          linkedin: 3000,
           tiktok: 2200,
           youtube: 5000,
         };
