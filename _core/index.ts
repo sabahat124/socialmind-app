@@ -27,9 +27,10 @@ app.get("*", (req, res) => {
   res.sendFile(path.resolve("E:/dist/index.html"));
 });
 
-app.listen(https://idyllic-melomakarona-96282b.netlify.app, '0.0.0.0', () => {
-  console.log("\n----------------------------");
-  console.log("🚀 PIPELINE OVERRIDE ACTIVE");
-  console.log("🔗 URL: http://localhost:https://idyllic-melomakarona-96282b.netlify.app/dashboard");
-  console.log("----------------------------\n");
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => {
+    console.log("\n------------------------------------");
+    console.log("🚀 CORE PIPELINE ACTIVE");
+    console.log(`🔗 RUNNING ON PORT: ${port}`);
+    console.log("------------------------------------\n");
 });
