@@ -7,7 +7,7 @@ app.use(cookieParser());
 
 // 1. THE EMERGENCY MAPPING
 // This maps BOTH the folder and the direct path to be 100% sure
-app.use("/assets", express.static(path.resolve(__dirname, "../dist/assets")));
+app.use("/assets", express.static(path.resolve(__dirname, "../client/dist/assets")));
 
 // 2. THE CEO IDENTITY (Keep this in the server too)
 app.get("/api/auth/session", (req, res) => {
@@ -19,11 +19,11 @@ app.get("/api/auth/session", (req, res) => {
 });
 
 // 3. SERVE THE BASE FOLDER
-app.use(express.static(path.resolve(__dirname, "../dist")));
+app.use(express.static(path.resolve(__dirname, "../client/dist")));
 
 // 4. THE CATCH-ALL
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+ app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client/dist/index.html"));
 });
 
 const port = process.env.PORT || 3000;
