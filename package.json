@@ -2,10 +2,10 @@
   "name": "socialmind",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "build:client": "cd client && npm install && npm run build",
+    "build:server": "tsc -p server/tsconfig.json || tsc -p _core/tsconfig.json",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node server/_core/index.js || node _core/index.js"
   },
   "dependencies": {
     "next": "latest",
