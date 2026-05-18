@@ -1,8 +1,8 @@
 {
   "name": "socialmind",
   "version": "1.0.0",
-  "scripts": {
-   "build:client": "npm install && npx vite build",
+ "scripts": {
+    "build:client": "npx vite build",
     "build:server": "tsc -p server/tsconfig.json || tsc -p _core/tsconfig.json",
     "build": "npm run build:client && npm run build:server",
     "start": "node server/_core/index.js || node _core/index.js"
