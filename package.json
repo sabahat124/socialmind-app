@@ -6,7 +6,7 @@
     "build:client": "npx vite build",
     "build:server": "tsc -p tsconfig.json --noEmit false --skipLibCheck || true",
     "build": "npm run build:client && npm run build:server",
-    "start": "node server/_core/index.js || node _core/index.js"
+    "start": "node server/index.js || node server/_core/index.js || node index.js || node _core/index.js"
   },
   "dependencies": {
     "vite": "^5.0.12",
@@ -21,6 +21,8 @@
     "superjson": "^2.2.1",
     "tw-animate-css": "^1.1.2",
     "class-variance-authority": "^0.7.0",
+    "cookie-parser": "^1.4.6",
+    "@types/cookie-parser": "^1.4.7",
     "@google/genai": "^1.0.0",
     "@lucia-auth/adapter-drizzle": "^1.1.0",
     "@neondatabase/serverless": "^0.9.0",
