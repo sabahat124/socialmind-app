@@ -6,8 +6,7 @@
     "build:client": "npx vite build",
     "build:server": "tsc -p tsconfig.json --noEmit false --skipLibCheck || true",
    "build": "npm run build:client && npm run build:server && npx drizzle-kit push:pg || true",
-    "start": "node server/index.js || node server/_core/index.js || node index.js || node _core/index.js"
-  },
+   "start": "node dist/server/_core/index.js",
   "dependencies": {
     "vite": "^5.0.12",
     "@tailwindcss/vite": "^4.0.0",
