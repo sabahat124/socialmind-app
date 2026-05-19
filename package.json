@@ -7,7 +7,7 @@
     "build:client": "vite build",
     "build:server": "tsc",
     "build": "npm run build:client && npm run build:server && npx drizzle-kit push:pg || true",
-    "start": "node dist/server/_core/index.js"
+    "start": "node dist/index.js || node dist/_core/index.js || node dist/server/_core/index.js || node dist/server/index.js" 
   },
    "dependencies": {
     "vite": "^5.0.12",
