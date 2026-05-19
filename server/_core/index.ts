@@ -6,10 +6,16 @@ const app = express();
 app.use(cookieParser());
 
 // 1. THE EMERGENCY MAPPING
-// This maps BOTH the folder and the direct path to be 100% sure
-app.use("/assets", express.static("E:/dist/assets"));
-app.use("/assets", express.static(path.resolve("E:/dist/assets")));
-
+// This maps to our production client builds dynamically on Linux/Railway
+const distPath = path.resolve(process.cwd(), "./dist/public");
+app.use(express.static(distPath));
+app.use("/assets", express.static(path.resolve(distPath, "assets")));
+// Fallback catch-all to serve index.html for frontend routing
+app.get("*", (req, res) => {
+  if (!req.path.startsWith("/api") && !req.path.startsWith("/trpc")) {
+    res.sendFile(path.resolve(process.cwd(), "./dist/public/index.html"));
+  }
+});
 // 2. THE CEO IDENTITY (Keep this in the server too)
 app.get("/api/auth/session", (req, res) => {
   res.json({
