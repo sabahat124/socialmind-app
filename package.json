@@ -9,7 +9,7 @@
     "build": "npm run build:client && npm run build:server && npx drizzle-kit push:pg || true",
     "start": "node dist/server/_core/index.js"
   },
-  "dependencies": {
+   "dependencies": {
     "vite": "^5.0.12",
     "@tailwindcss/vite": "^4.0.0",
     "@vitejs/plugin-react": "^4.2.1",
