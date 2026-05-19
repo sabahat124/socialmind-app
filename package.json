@@ -19,6 +19,7 @@
     "@trpc/server": "^10.45.4",
     "@trpc/react-query": "^10.45.4",
     "superjson": "^2.2.1",
+    "tw-animate-css": "^1.1.2",
     "@google/genai": "^1.0.0",
     "@lucia-auth/adapter-drizzle": "^1.1.0",
     "@neondatabase/serverless": "^0.9.0",
